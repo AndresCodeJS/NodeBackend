@@ -18,6 +18,7 @@ export const checkJWT = async(req, res) => {
         await disconnect();
     
         if ( !user ) {
+            await disconnect();
             return res.status(400).json({ message: 'No existe usuario con ese id' })
         }
     
@@ -33,6 +34,7 @@ export const checkJWT = async(req, res) => {
         })
 
     } catch (error) {
+        await disconnect();
         return res.status(401).json({
             message: 'Token de autorización no es válido'
         })   
