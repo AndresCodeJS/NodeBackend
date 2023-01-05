@@ -14,7 +14,7 @@ export const saveOrder = async (req, res) => {
     console.log('TOKEN:',token)
     console.log('OrderItems:',orderItems)
     console.log('TOTAL:',total)
-
+    console.log('hola')
     const { userId } = await jwt.isValidToken(token);
 
     if ( !userId ) {
